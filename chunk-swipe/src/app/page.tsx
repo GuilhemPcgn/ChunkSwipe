@@ -332,10 +332,17 @@ export default function ValidationPage() {
   if (loading) {
     return (
       <ProtectedRoute>
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4">
-          <div className="text-center">
-            <div className="w-16 h-16 border-4 border-indigo-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-gray-300">Chargement des données...</p>
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-950 flex items-center justify-center p-4 relative overflow-hidden">
+          {/* Particules de fond animées */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400/20 rounded-full float-animation" style={{ animationDelay: '0s' }}></div>
+            <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-slate-300/30 rounded-full float-animation" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-slate-400/10 rounded-full float-animation" style={{ animationDelay: '4s' }}></div>
+          </div>
+          
+          <div className="text-center glass-card rounded-3xl p-8 depth-shadow">
+            <div className="w-16 h-16 border-4 border-blue-400/60 border-t-transparent rounded-full animate-spin mx-auto mb-4 glow-effect"></div>
+            <p className="text-slate-200 font-medium">Chargement des données...</p>
           </div>
         </div>
       </ProtectedRoute>
@@ -345,28 +352,39 @@ export default function ValidationPage() {
   if (chunks.length === 0) {
     return (
       <ProtectedRoute>
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4">
-          <div className="text-center">
-            <div className="w-24 h-24 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Check className="w-12 h-12 text-gray-400" />
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-950 flex items-center justify-center p-4 relative overflow-hidden">
+          {/* Particules de fond animées */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400/20 rounded-full float-animation" style={{ animationDelay: '0s' }}></div>
+            <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-slate-300/30 rounded-full float-animation" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-slate-400/10 rounded-full float-animation" style={{ animationDelay: '4s' }}></div>
+          </div>
+          
+          <div className="text-center glass-card rounded-3xl p-8 depth-shadow max-w-md">
+            <div className="w-24 h-24 glass rounded-full flex items-center justify-center mx-auto mb-6 subtle-glow">
+              <Check className="w-12 h-12 text-blue-400/80" />
             </div>
-            <h2 className="text-2xl font-bold text-white mb-4">Aucune donnée à valider</h2>
-            <p className="text-gray-300 mb-6">Tous les chunks ont déjà été traités ou la table est vide.</p>
+            <h2 className="text-2xl font-bold text-slate-100 mb-4">Aucune donnée à valider</h2>
+            <p className="text-slate-300 mb-6">Tous les chunks ont déjà été traités ou la table est vide.</p>
             <div className="space-y-3">
-              <button
+              <motion.button
                 onClick={addTestData}
-                className="bg-green-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-green-700 transition-colors flex items-center gap-2 mx-auto"
+                className="glass-button text-slate-200 px-6 py-3 rounded-2xl font-medium hover:bg-white/10 transition-all flex items-center gap-2 mx-auto"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Check className="w-4 h-4" />
                 Ajouter des données de test
-              </button>
-              <button
+              </motion.button>
+              <motion.button
                 onClick={() => window.location.reload()}
-                className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2 mx-auto"
+                className="glass-button text-slate-200 px-6 py-3 rounded-2xl font-medium hover:bg-white/10 transition-all flex items-center gap-2 mx-auto"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <RotateCcw className="w-4 h-4" />
                 Actualiser
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
@@ -379,20 +397,29 @@ export default function ValidationPage() {
   if (!currentChunk) {
     return (
       <ProtectedRoute>
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4">
-          <div className="text-center">
-            <div className="w-24 h-24 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Check className="w-12 h-12 text-gray-400" />
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-950 flex items-center justify-center p-4 relative overflow-hidden">
+          {/* Particules de fond animées */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400/20 rounded-full float-animation" style={{ animationDelay: '0s' }}></div>
+            <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-slate-300/30 rounded-full float-animation" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-slate-400/10 rounded-full float-animation" style={{ animationDelay: '4s' }}></div>
+          </div>
+          
+          <div className="text-center glass-card rounded-3xl p-8 depth-shadow max-w-md">
+            <div className="w-24 h-24 glass rounded-full flex items-center justify-center mx-auto mb-6 subtle-glow">
+              <Check className="w-12 h-12 text-blue-400/80" />
             </div>
-            <h2 className="text-2xl font-bold text-white mb-4">Aucune donnée à valider</h2>
-            <p className="text-gray-300 mb-6">Tous les chunks ont déjà été traités ou la table est vide.</p>
-            <button
+            <h2 className="text-2xl font-bold text-slate-100 mb-4">Aucune donnée à valider</h2>
+            <p className="text-slate-300 mb-6">Tous les chunks ont déjà été traités ou la table est vide.</p>
+            <motion.button
               onClick={() => window.location.reload()}
-              className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2 mx-auto"
+              className="glass-button text-slate-200 px-6 py-3 rounded-2xl font-medium hover:bg-white/10 transition-all flex items-center gap-2 mx-auto"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <RotateCcw className="w-4 h-4" />
               Actualiser
-            </button>
+            </motion.button>
           </div>
         </div>
       </ProtectedRoute>
@@ -402,20 +429,29 @@ export default function ValidationPage() {
   if (currentIndex >= chunks.length) {
     return (
       <ProtectedRoute>
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4">
-          <div className="text-center">
-            <div className="w-24 h-24 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Check className="w-12 h-12 text-green-400" />
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-950 flex items-center justify-center p-4 relative overflow-hidden">
+          {/* Particules de fond animées */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400/20 rounded-full float-animation" style={{ animationDelay: '0s' }}></div>
+            <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-slate-300/30 rounded-full float-animation" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-slate-400/10 rounded-full float-animation" style={{ animationDelay: '4s' }}></div>
+          </div>
+          
+          <div className="text-center glass-card rounded-3xl p-8 depth-shadow max-w-md">
+            <div className="w-24 h-24 glass rounded-full flex items-center justify-center mx-auto mb-6 subtle-glow" style={{ borderColor: 'rgba(34, 197, 94, 0.2)' }}>
+              <Check className="w-12 h-12 text-green-400/80" />
             </div>
-            <h2 className="text-2xl font-bold text-white mb-4">Validation terminée !</h2>
-            <p className="text-gray-300 mb-6">Toutes les données ont été traitées.</p>
-            <button
+            <h2 className="text-2xl font-bold text-slate-100 mb-4">Validation terminée !</h2>
+            <p className="text-slate-300 mb-6">Toutes les données ont été traitées.</p>
+            <motion.button
               onClick={() => window.location.reload()}
-              className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-indigo-700 transition-colors flex items-center gap-2 mx-auto"
+              className="glass-button text-slate-200 px-6 py-3 rounded-2xl font-medium hover:bg-white/10 transition-all flex items-center gap-2 mx-auto"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <RotateCcw className="w-4 h-4" />
               Actualiser
-            </button>
+            </motion.button>
           </div>
         </div>
       </ProtectedRoute>
@@ -424,22 +460,32 @@ export default function ValidationPage() {
 
   return (
     <ProtectedRoute>
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-950 relative overflow-hidden">
+        {/* Particules de fond animées */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400/10 rounded-full float-animation" style={{ animationDelay: '0s' }}></div>
+          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-slate-300/20 rounded-full float-animation" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-slate-400/5 rounded-full float-animation" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-slate-300/15 rounded-full float-animation" style={{ animationDelay: '1s' }}></div>
+        </div>
+        
         {/* Header avec logo et bouton de déconnexion */}
-        <header className="p-4 sm:p-6">
+        <header className="p-4 sm:p-6 relative z-10">
           <div className="flex justify-between items-center max-w-4xl mx-auto">
             <div className="flex-1"></div>
             <div className="flex justify-center flex-1">
-              <img 
-                src="/LogoAllyiaColor.png" 
-                alt="Logo" 
-                className="h-8 opacity-60 hover:opacity-80 transition-opacity"
-              />
+              <div className="glass-card rounded-2xl p-3 depth-shadow">
+                <img 
+                  src="/LogoAllyiaColor.png" 
+                  alt="Logo" 
+                  className="h-8 opacity-90 hover:opacity-100 transition-opacity"
+                />
+              </div>
             </div>
             <div className="flex justify-end flex-1">
               <motion.button
                 onClick={handleSignOut}
-                className="bg-gray-800 text-gray-300 px-4 py-2 rounded-xl font-medium hover:bg-gray-700 hover:text-white transition-colors flex items-center gap-2"
+                className="glass-button text-slate-200 px-4 py-2 rounded-2xl font-medium hover:bg-white/10 hover:text-slate-100 transition-all flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -451,7 +497,7 @@ export default function ValidationPage() {
         </header>
 
         {/* Zone principale des cartes */}
-        <div className="flex-1 flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+        <div className="flex-1 flex items-center justify-center p-4 sm:p-6 overflow-hidden relative z-10">
           <div className="relative w-full max-w-sm overflow-hidden">
             {/* Effet de paquet de cartes désordonnées */}
             {[8, 7, 6, 5, 4, 3, 2, 1].map((offset) => {
@@ -467,7 +513,7 @@ export default function ValidationPage() {
               return (
                 <motion.div
                   key={`bg-${currentIndex}-${offset}-${bgChunk.id}`}
-                  className="absolute inset-0 bg-gray-800 rounded-2xl shadow-lg border border-gray-700"
+                  className="absolute inset-0 glass-card rounded-3xl shadow-2xl"
                   initial={{ 
                     scale: scale * 0.8, 
                     rotate: randomRotation, 
@@ -501,7 +547,7 @@ export default function ValidationPage() {
               dragConstraints={{ left: 0, right: 0 }}
               onDragEnd={handleDragEnd}
               style={{ x, rotate, opacity }}
-              className="relative bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 cursor-grab active:cursor-grabbing z-60 border border-gray-700"
+              className="relative glass-card rounded-3xl shadow-2xl p-6 sm:p-8 cursor-grab active:cursor-grabbing z-60 backdrop-blur-xl"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               initial={{ scale: 0, rotate: -10, opacity: 0 }}
@@ -515,13 +561,13 @@ export default function ValidationPage() {
             >
               {/* Indicateurs de swipe */}
               <motion.div
-                className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                className="absolute top-4 right-4 glass-button text-red-400/80 px-3 py-1 rounded-full text-sm font-medium"
                 style={{ opacity: rejectOpacity }}
               >
                 REJETER
               </motion.div>
               <motion.div
-                className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                className="absolute top-4 left-4 glass-button text-green-400/80 px-3 py-1 rounded-full text-sm font-medium"
                 style={{ opacity: validateOpacity }}
               >
                 VALIDER
@@ -529,22 +575,22 @@ export default function ValidationPage() {
 
               {/* Contenu de la carte */}
               <div className="space-y-4">
-                              <div className="flex items-center justify-between mb-4">
-                <span className="text-sm text-gray-400 font-medium">
-                  {chunks.length} document{chunks.length > 1 ? 's' : ''} restant{chunks.length > 1 ? 's' : ''}
-                </span>
-                <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
-              </div>
-                
-                <div className="text-white leading-relaxed text-base sm:text-lg">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-slate-300 font-medium">
+                    {chunks.length} document{chunks.length > 1 ? 's' : ''} restant{chunks.length > 1 ? 's' : ''}
+                  </span>
+                  <div className="w-2 h-2 bg-blue-400/60 rounded-full glow-effect"></div>
+                </div>
+                  
+                <div className="text-slate-200 leading-relaxed text-base sm:text-lg">
                   {currentChunk.content || 'Contenu non disponible'}
                 </div>
 
                 {/* Barre de progression */}
                 <div className="mt-6">
-                  <div className="w-full bg-gray-700 rounded-full h-2">
+                  <div className="w-full glass rounded-full h-3">
                     <div
-                      className="bg-gradient-to-r from-indigo-500 to-cyan-500 h-2 rounded-full transition-all duration-300"
+                      className="bg-gradient-to-r from-blue-500 via-slate-400 to-slate-300 h-3 rounded-full transition-all duration-300 shadow-lg"
                       style={{ width: `${((currentIndex + 1) / chunks.length) * 100}%` }}
                     ></div>
                   </div>
@@ -555,12 +601,12 @@ export default function ValidationPage() {
         </div>
 
         {/* Boutons d'action */}
-        <div className="p-4 sm:p-6">
+        <div className="p-4 sm:p-6 relative z-10">
           <div className="flex justify-center gap-4 max-w-sm mx-auto">
             <motion.button
               onClick={() => handleSwipe('left')}
               disabled={isAnimating}
-              className="flex-1 bg-gray-800 border-2 border-red-600 text-red-400 px-6 py-4 rounded-2xl font-medium hover:bg-red-900 hover:border-red-500 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+              className="flex-1 glass-button border-2 border-red-400/40 text-red-300 px-6 py-4 rounded-2xl font-medium hover:bg-red-400/10 hover:border-red-400/60 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -573,7 +619,7 @@ export default function ValidationPage() {
             <motion.button
               onClick={() => handleSwipe('right')}
               disabled={isAnimating}
-              className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-4 rounded-2xl font-medium hover:from-green-700 hover:to-emerald-700 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+              className="flex-1 glass-button border-2 border-green-400/40 text-green-300 px-6 py-4 rounded-2xl font-medium hover:bg-green-400/10 hover:border-green-400/60 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -585,7 +631,7 @@ export default function ValidationPage() {
           </div>
 
           {/* Instructions de swipe */}
-          <p className="text-center text-gray-400 text-sm mt-4">
+          <p className="text-center text-slate-300 text-sm mt-4 font-medium">
             Glissez à gauche pour rejeter, à droite pour valider
           </p>
         </div>
